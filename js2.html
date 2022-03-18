@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles2.css">
+    <title>Fibbonacci</title>
+</head>
+<body>
+    <center>
+        <h2>Fibonacci</h2>
+        <input class="length" type="number">
+        <input class="button2" type="submit">
+        <h1 class="result">result</h1>
+    </center>
+    <script src="index.js" charset="utf-8"></script>
+    <script>
+        var myButton = document.querySelector(".button2");
+        var pointIn = document.querySelector(".length");
+        //var pointRes = document.querySelector(".result");
+        myButton.addEventListener("click", fibo);
+        function fibo(){
+        document.querySelector(".result").textContent = fib(pointIn.value).toString();
+        }
+        function fib(l){
+            var array = [];
+            while(array.length<l){
+                if(array.length === 0){
+                   array.push(0);
+                }
+                else if (array.length === 1){
+                    array.push(1);
+                }
+                else{
+                    array.push(array[array.length-1]+ array[array.length-2]);
+                }
+            }
+            return array;
+        }
+    </script>
+</body>
+<footer>
+</footer>
+</html>
